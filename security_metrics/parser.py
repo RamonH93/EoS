@@ -8,7 +8,7 @@ for filename in os.listdir(path):
         write_file = open(path + new_filename, 'wb')
         with open(path + filename, 'rb') as read_file:
             for line in read_file:
-                line = line[0:-2]
+                line = line[1:-2]
                 line = line.replace(b'"', b'""')
                 line = b'"' + line.replace(b'"",""', b'","') + b'"\n'
                 write_file.write(line)
