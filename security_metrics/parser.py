@@ -12,3 +12,20 @@ for filename in os.listdir(path):
                 line = line.replace(b'"', b'""')
                 line = b'"' + line.replace(b'"",""', b'","') + b'"\n'
                 write_file.write(line)
+        write_file.close()
+
+write_file = open(path + 'parsed_all_phishing.csv', 'wb')
+first_file = True
+for filename in os.listdir(path):
+    first_line = True
+    if 'parsed' in filename and 'from' in filename:
+        with open(path + filename, 'rb') as read_file:
+            for line in read_file:
+                if first_line:
+                    if not first_file:
+                        first_file = False
+                        first_line = False
+                        continue
+                    first_line = False
+                write_file.write(line)
+write_file.close()
