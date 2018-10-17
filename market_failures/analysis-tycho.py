@@ -20,11 +20,11 @@ OC = merged[merged['continent'] == 'OC']
 EU = merged[merged['continent'] == 'EU']
 AS = merged[merged['continent'].isin(['AS','ME'])]
 
-financial = merged[merged['branch'] == 'F']
-other = merged[merged['branch'] == 'O']
+# financial = merged[merged['branch'] == 'F']
+# other = merged[merged['branch'] == 'O']
 
-results = logrank_test(financial['Duration'], other['Duration'],financial['Observed'], other['Observed'],alpha=.95)
-print('P value for Financial and \'Other\'= ' ,results.p_value)
+# results = logrank_test(financial['Duration'], other['Duration'],financial['Observed'], other['Observed'],alpha=.95)
+# print('P value for Financial and \'Other\'= ' ,results.p_value)
 
 countries = [NA, SA, AF, OC, EU, AS]
 
@@ -64,5 +64,5 @@ ax = kmf.plot(ax=ax)
 
 kmf.fit(SA['Duration'], SA['Observed'],label='SA')
 ax = kmf.plot(ax=ax)
-# ax.set_xscale('log')
+ax.set_xscale('log')
 plt.show()
