@@ -9,3 +9,5 @@ CODE:
 The file "analysis.py" is used for Figure1 in the final report.
 The file "analysis-tycho.py" is used for the logrank tests and accompanying figures.
 The file "continent_ratio.py" is used to calculate some of the numbers that are mentioned in the results and the conclusion about the skewedness of the dataset.
+The file "cox_analysis.py" is used to calculate the coefficients and hazard rate of the Cox proportional hazard method.
+The file "loglog.py" is used to check the Cox proportional hazard assumptions.
